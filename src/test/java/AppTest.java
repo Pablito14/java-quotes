@@ -9,10 +9,7 @@ import java.io.BufferedReader;
 import static org.junit.Assert.*;
 
 public class AppTest {
-
-    /*
-    * Tests:--> Check that toString == books[0] (write expected return format)*/
-
+    
     @Test public void testBookToString() {
         BufferedReader successfulRead = FileReadAndWrite.fileToReaderObject();
         Gson gson = new Gson();
