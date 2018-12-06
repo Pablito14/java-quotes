@@ -13,20 +13,39 @@ public class AppTest {
     /*
     * Tests:--> Check that toString == books[0] (write expected return format)*/
 
-
     @Test public void testBookToString() {
         BufferedReader successfulRead = FileReadAndWrite.fileToReaderObject();
-
-        // use Gson to read the data and turn it into a book class
         Gson gson = new Gson();
         Book[] books = gson.fromJson(successfulRead, Book[].class);
         String expectedTest = "Quote: “I am good, but not an angel. I do sin, but I am not the devil. I am just a small girl in a big world trying to find someone to love.” - Author: Marilyn Monroe";
         System.out.println(books[0].toString());
         assertEquals("Our expected text should equal the book.toString method", expectedTest, books[0].toString());
-
-//        App classUnderTest = new App();
-//        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
     }
 
+    @Test public void testRandomize() {
+        BufferedReader successfulRead = FileReadAndWrite.fileToReaderObject();
+        Gson gson = new Gson();
+        Book[] books = gson.fromJson(successfulRead, Book[].class);
+        String test1 = Randomizer.generateQuoteAndAuthor(books);
+        String test2 = Randomizer.generateQuoteAndAuthor(books);
+        assertFalse("The two strings returned by the randomizer should be unique.", test1.equals(test2));
+    }
+
+    @Test public void testRandomizeHarder() {
+        BufferedReader successfulRead = FileReadAndWrite.fileToReaderObject();
+        Gson gson = new Gson();
+        Book[] books = gson.fromJson(successfulRead, Book[].class);
+        String test1 = Randomizer.generateQuoteAndAuthor(books);
+        String test2 = Randomizer.generateQuoteAndAuthor(books);
+        String test3 = Randomizer.generateQuoteAndAuthor(books);
+        String test4 = Randomizer.generateQuoteAndAuthor(books);
+        String test5 = Randomizer.generateQuoteAndAuthor(books);
+
+        assertFalse("The two strings returned by the randomizer should be unique.", test1.equals(test2));
+        assertFalse("The two strings returned by the randomizer should be unique.", test1.equals(test3));
+        assertFalse("The two strings returned by the randomizer should be unique.", test1.equals(test4));
+        assertFalse("The two strings returned by the randomizer should be unique.", test1.equals(test5));
+
+    }
 
 }
