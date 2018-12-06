@@ -13,6 +13,6 @@ public class Book {
 
 
     public String toString(){
-        return "Quote: " + this.text + " - Author: " + this.author;
+        return "Quote:" + this.text + "- Author: " + this.author;
     }
 }
