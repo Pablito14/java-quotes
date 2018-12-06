@@ -16,6 +16,6 @@ implementation 'com.google.code.gson:gson:2.8.5' <br/>
 Save your project immediately after inserting that snippet so that your editor can download
 and build the new dependencies using gradle. <br/>
 
-Finally, to run our application, run the main method from the App.java file. 
+Finally, to run our application, run the main method from the App.java file.  
 
 
