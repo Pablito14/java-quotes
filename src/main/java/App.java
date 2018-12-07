@@ -16,6 +16,7 @@ public class App {
             StringBuffer content = new StringBuffer();
             while ((inputLine = in.readLine()) != null) {
                 content.append(inputLine);
+
             }
             System.out.println(content);
             in.close();
