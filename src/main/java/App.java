@@ -16,7 +16,7 @@ public class App {
 
     // use Gson to read the data and turn it into a book class
     Gson gson = new Gson();
-    Book[] books = gson.fromJson(successfulRead, Book[].class);
+    Quote[] books = gson.fromJson(successfulRead, Quote[].class);
 
     // find a book randomly within our array and return quote and author
     String newQuoteAndAuthor = Randomizer.generateQuoteAndAuthor(books);
