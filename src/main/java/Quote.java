@@ -11,7 +11,6 @@ public class Quote {
         this.text = text;
     }
 
-
     public String toString(){
         return "Quote:" + this.text + "- Author: " + this.author;
     }

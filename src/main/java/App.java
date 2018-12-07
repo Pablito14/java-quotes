@@ -1,12 +1,9 @@
-//import com.google.gson.Gson;
+import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Arrays;
-
 
 public class App {
     public static void main(String[] args) {
@@ -22,18 +19,14 @@ public class App {
             }
             System.out.println(content);
             in.close();
-        }catch(IOException e){
-
+        }catch(IOException e) {
+            BufferedReader successfulRead = FileReadAndWrite.fileToReaderObject();
+            Gson gson = new Gson();
+            Quote[] books = gson.fromJson(successfulRead, Quote[].class);
+            String cachedQuotes = Randomizer.generateQuoteAndAuthor(books);
+            System.out.println("Unfortunately your internet isn't working properly, here is a random quote from our cache.\n" + cachedQuotes);
         }
-//        // use FileReadAndWrite class to get a file reader in JSON format
-//        BufferedReader successfulRead = FileReadAndWrite.fileToReaderObject();
-//        // use Gson to read the data and turn it into a book class
-//        Gson gson = new Gson();
-//        Quote[] books = gson.fromJson(successfulRead, Quote[].class);
-//        // find a book randomly within our array and return quote and author
-//        String newQuoteAndAuthor = Randomizer.generateQuoteAndAuthor(books);
-//        // print
-//        System.out.println(newQuoteAndAuthor);
+//
     }
 }
 
