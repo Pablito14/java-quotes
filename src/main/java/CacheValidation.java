@@ -9,7 +9,7 @@ public class CacheValidation {
     }
 
     public boolean exisitsInCache(Quote quoteFromInternet){
-        for(int i = 0; i < cachedQuotes.length; i++){
+        for(int i = 0; i < cachedQuotes.size(); i++){
             if(quoteFromInternet.equals(cachedQuotes[i])){
                 return true;
             }
